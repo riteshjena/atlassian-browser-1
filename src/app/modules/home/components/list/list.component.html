@@ -1,0 +1,8 @@
+<toggle-list
+  *ngFor="let dataItem of data"
+  [data]="dataItem"
+  [selectedId]="selectedId$ | async"
+  [selectedPath]="selectedPath$ | async"
+  (updateSelectedId)="updateSelectedId($event)"
+  (updateSelectedPath)="updateSelectedPath($event)"
+></toggle-list>

@@ -1,0 +1,32 @@
+<ng-container *ngIf="data?.children; else unorderedList">
+  <div class="titleWrapper" (click)="toggleState()">
+    <span *ngIf="isOpen; else closedIcon"> ▼ </span>
+
+    <ng-template #closedIcon>
+      <span> ▶ </span>
+    </ng-template>
+    <span>{{ data.name }}</span>
+  </div>
+
+  <div class="childrenContainer" *ngIf="isOpen">
+    <ng-container *ngFor="let child of data.children">
+      <toggle-list
+        [data]="child"
+        [selectedId]="selectedId"
+        [selectedPath]="selectedPath"
+        (updateSelectedId)="_updateSelectedId($event)"
+        (updateSelectedPath)="_updateSelectedPath($event)"
+      ></toggle-list>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-template #unorderedList>
+  <unordered-list
+    [items]="[data]"
+    [selectedId]="selectedId"
+    (updateSelectedId)="_updateSelectedId($event)"
+    (updateSelectedPath)="_updateSelectedPath($event)"
+  >
+  </unordered-list>
+</ng-template>

@@ -1,0 +1,14 @@
+:host {
+  ul {
+    padding-inline-start: 16px;
+
+    li {
+      cursor: pointer;
+
+      &.selected {
+        text-decoration: underline;
+        text-decoration-color: black;
+      }
+    }
+  }
+}
