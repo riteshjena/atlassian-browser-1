@@ -1,3 +1,8 @@
+Notes around local state and how to test the behaviour:
+
+The current selected node and path have been hardcoded in the file sample.state.ts
+One can change the values and see how the app responds to mimic reading the data from the url.
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
